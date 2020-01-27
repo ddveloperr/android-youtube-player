@@ -33,7 +33,7 @@ class YouTubePlayerView(context: Context, attrs: AttributeSet? = null, defStyleA
     var enableAutomaticInitialization: Boolean
 
     init {
-        addView(legacyTubePlayerView, FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT))
+        addView(legacyTubePlayerView, LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT))
 
         val typedArray = context.theme.obtainStyledAttributes(attrs, R.styleable.YouTubePlayerView, 0, 0)
 
@@ -44,11 +44,11 @@ class YouTubePlayerView(context: Context, attrs: AttributeSet? = null, defStyleA
 
         val useWebUi = typedArray.getBoolean(R.styleable.YouTubePlayerView_useWebUi, false)
         val enableLiveVideoUi = typedArray.getBoolean(R.styleable.YouTubePlayerView_enableLiveVideoUi, false)
-        val showYouTubeButton = typedArray.getBoolean(R.styleable.YouTubePlayerView_showYouTubeButton, true)
-        val showFullScreenButton = typedArray.getBoolean(R.styleable.YouTubePlayerView_showFullScreenButton, true)
-        val showVideoCurrentTime = typedArray.getBoolean(R.styleable.YouTubePlayerView_showVideoCurrentTime, true)
-        val showVideoDuration = typedArray.getBoolean(R.styleable.YouTubePlayerView_showVideoDuration, true)
-        val showSeekBar = typedArray.getBoolean(R.styleable.YouTubePlayerView_showSeekBar, true)
+        val showYouTubeButton = typedArray.getBoolean(R.styleable.YouTubePlayerView_showYouTubeButton, false)
+        val showFullScreenButton = typedArray.getBoolean(R.styleable.YouTubePlayerView_showFullScreenButton, false)
+        val showVideoCurrentTime = typedArray.getBoolean(R.styleable.YouTubePlayerView_showVideoCurrentTime, false)
+        val showVideoDuration = typedArray.getBoolean(R.styleable.YouTubePlayerView_showVideoDuration, false)
+        val showSeekBar = typedArray.getBoolean(R.styleable.YouTubePlayerView_showSeekBar, false)
 
         typedArray.recycle()
 
